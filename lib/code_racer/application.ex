@@ -1,5 +1,10 @@
 defmodule CodeRacer.Application do
+  @moduledoc """
+  The entrypoint for the application, it setups up and
+  manages all the supervisors.
+  """
   use Application
+  alias CodeRacerWeb.Endpoint
 
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
@@ -12,7 +17,9 @@ defmodule CodeRacer.Application do
       supervisor(CodeRacer.Repo, []),
       # Start the endpoint when the application starts
       supervisor(CodeRacerWeb.Endpoint, []),
-      # Start your own worker by calling: CodeRacer.Worker.start_link(arg1, arg2, arg3)
+      # Start your own worker by calling:
+      #   CodeRacer.Worker.start_link(arg1, arg2, arg3)
+      #
       # worker(CodeRacer.Worker, [arg1, arg2, arg3]),
     ]
 
@@ -25,7 +32,7 @@ defmodule CodeRacer.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    CodeRacerWeb.Endpoint.config_change(changed, removed)
+    Endpoint.config_change(changed, removed)
     :ok
   end
 end
