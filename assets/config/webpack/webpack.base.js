@@ -1,32 +1,29 @@
-const { join } = require('path');
+const { join, resolve } = require('path');
+const webpack = require('webpack');
 
 const PATHS = {
   home: join(__dirname, "../.."),
-  app: join(__dirname, "../../app"),
   build: join(__dirname, "../../../priv/static") 
 };
 
 module.exports = {
-  entry: PATHS.app,
+  entry: join(PATHS.home, "app/index.js"),
   output: {
     path: PATHS.build,
-    filename: "main.js"
+    filename: "js/app.js"
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: join(PATHS.home, "node_modules"),
         options: {
           presets: ["latest", "react", "stage-0", "react-hmre"],
         },
       }, {
         test: /\.css$/,
-        include: join(PATHS.home, "node_modules"),
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        loaders: [ 'style-loader', 'css-loader' ],
       }, {
         test: /\.(png|svg|jpg)$/,
         include: join(PATHS.home, "static"),
