@@ -11,8 +11,9 @@ config :code_racer, CodeRacerWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/webpack/bin/webpack.js", "--watch",
+  watchers: [node: ["node_modules/webpack/bin/webpack.js",
                     "--config", "config/webpack/webpack.base.js",
+                    "--color", "--watch-stdin",
                     cd: Path.expand("../assets", __DIR__)]]
 
 # ## SSL Support
