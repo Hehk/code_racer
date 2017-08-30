@@ -29,7 +29,3 @@ npm-debug.log
 # Removing swp files from my git commits once and for all :P
 *.swp
 *.swo
-[master 1d3fc9d] it worksgit diffgit diff
- 7 files changed, 80 insertions(+), 62 deletions(-)
- create mode 100644 assets/app/test.css
- rewrite lib/code_racer_web/templates/layout/app.html.eex (72%)
