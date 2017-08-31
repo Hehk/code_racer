@@ -1,5 +1,6 @@
 module.exports = {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "rules": {
     // Turn off requiring jsx files for jsx
     "react/jsx-filename-extension": 0,

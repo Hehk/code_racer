@@ -21,6 +21,7 @@ module.exports = {
     alias: {
       components: join(PATHS.app, 'components'),
       containers: join(PATHS.app, 'containers'),
+      utils: join(PATHS.app, 'utils'),
       images: join(PATHS.home, 'static/images'),
     },
   },

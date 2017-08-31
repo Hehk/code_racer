@@ -3,11 +3,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css/normalize.css';
-import HelloWorld from 'containers/HelloWorld';
+import CodeSession from 'containers/CodeSession';
 
 const App = () => (
   <div>
-    <HelloWorld />
+    <CodeSession />
   </div>
 );
 
