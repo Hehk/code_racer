@@ -1,4 +1,4 @@
-defmodule CodeRacerWeb.UserSocket do
+defmodule CodeRacerWeb.RaceSocket do
   use Phoenix.Socket
 
   ## Channels
@@ -19,7 +19,8 @@ defmodule CodeRacerWeb.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
-  def connect(_params, socket) do
+  def connect(params, socket) do
+    IO.inspect params
     {:ok, socket}
   end
 

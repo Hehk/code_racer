@@ -22,8 +22,8 @@ defmodule CodeRacerWeb.CodeRaceChannel do
   end
   """
 
-  def join("code_race:" <> race_id, _message, socket) do
-    {:ok, @sample_code, socket}
+  def join("code_race:" <> race_id, %{"params" => %{"userId" => user_id}}, socket) do
+    {:ok, @sample_code, assign(socket, :race_id, race_id)}
   end
 
 end

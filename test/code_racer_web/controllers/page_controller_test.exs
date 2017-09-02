@@ -3,6 +3,8 @@ defmodule CodeRacerWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+
+    # test whether the react-app id is in the base html 
+    assert html_response(conn, 200) =~ "id=\"react-app\""
   end
 end

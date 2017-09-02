@@ -1,7 +1,7 @@
 defmodule CodeRacerWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :code_racer
 
-  socket "/socket", CodeRacerWeb.UserSocket
+  socket "/socket", CodeRacerWeb.RaceSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #

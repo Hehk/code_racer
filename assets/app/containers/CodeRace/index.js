@@ -23,9 +23,10 @@ class CodeRace extends React.Component {
   componentWillMount() {
     // TODO: take the change
     const gameId = 'test';
-    const channel = codeRaceChannel({ gameId });
+    const userId = 'jimmy';
+    const channel = codeRaceChannel({ gameId }, { userId });
 
-    channel.join()
+    channel.join({ userId })
       .receive('ok', text => this.setState({ text }))
       .receive('error', res => console.log('err', res));
     this.setState({ channel });
